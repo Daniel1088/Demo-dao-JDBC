@@ -3,6 +3,7 @@ package Application;
 import java.sql.Date;
 
 import Model.Entities.Department;
+import Model.Entities.Seller;
 import demo.dao.DaoFactory;
 import demo.dao.SellerDao;
 
@@ -14,7 +15,11 @@ public class Program {
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
-		System.out.println(obj);
+		Seller seller = sellerDao.findById(3);
+		
+		
+		
+		System.out.println(seller);
 	}
 
 }
