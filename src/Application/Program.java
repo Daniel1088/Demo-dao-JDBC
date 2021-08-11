@@ -33,6 +33,14 @@ public class Program {
 			System.out.println(s);
 		}
 		
+		System.out.println("\n=== Teste 3:Todos os vendedores ===");
+		
+		list = sellerDao.findAll();		
+		for (Seller s: list)
+		{
+			System.out.println(s);
+		}
+		
 	}
 
 }
