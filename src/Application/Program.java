@@ -3,6 +3,8 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Scanner;
+
 import Model.Entities.Department;
 import Model.Entities.Seller;
 import demo.dao.DaoFactory;
@@ -13,6 +15,8 @@ public class Program {
 	
 	public static void main(String[] args) throws ParseException
 	{
+		Scanner sc = new Scanner(System.in);
+		
 		Department obj = new Department (1, "Books");
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
@@ -53,6 +57,15 @@ public class Program {
 		seller.setName("Martha Wayne");
 		sellerDao.update(seller);
 		System.out.println("Atualização completa");
+		
+		System.out.println("\n=== Teste 6:Deletar vendedor ===");
+		System.out.print("Entre com o Id para deletar:");
+		int id = sc.nextInt();
+		sellerDao.deleteById(id);
+		System.out.println("O vendedor foi apagado");
+		
+		sc.close();
+		
 	}
 
 }
