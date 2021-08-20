@@ -8,6 +8,7 @@ import Model.Entities.Seller;
 import demo.dao.DaoFactory;
 import demo.dao.SellerDao;
 
+
 public class Program {
 	
 	public static void main(String[] args) throws ParseException
@@ -47,6 +48,11 @@ public class Program {
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New Id ="+ newSeller.getId());
 		
+		System.out.println("\n=== Teste 5:Atualizar vendedores ===");
+		seller = sellerDao.findById(1);
+		seller.setName("Martha Wayne");
+		sellerDao.update(seller);
+		System.out.println("Atualização completa");
 	}
 
 }
